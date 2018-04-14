@@ -58,7 +58,7 @@ public class WallOne : MonoBehaviour {
             }
             if (punsh <= .0f && punsh > -1.0f)
             {
-                health.value -= 0.5f;
+                health.value -= 0.2f;
             }
         }
         if (waterTime > 0)
@@ -71,11 +71,11 @@ public class WallOne : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.A))
         {
-            health.value -= 0.02f * Time.deltaTime;
+            health.value -= 0.01f * Time.deltaTime;
         }
         else if (waterFlow)
         {
-            health.value -= 0.2f * Time.deltaTime;
+            health.value -= 0.05f * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
