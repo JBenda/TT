@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
     */
 public class MainMenuPressButton : MonoBehaviour {
 
+    public AudioClip _audioClip;
+    private AudioSource _audioSource;
+
     private MainMenuMoveCursor _cursorPosition;
     private EventManager _eventManager;
 
@@ -15,6 +18,7 @@ public class MainMenuPressButton : MonoBehaviour {
     void Start () {
         _cursorPosition = FindObjectOfType<MainMenuMoveCursor>();
         _eventManager = FindObjectOfType<EventManager>();
+        _audioSource = FindObjectOfType<MusicManager>().GetComponent<AudioSource>();
     }
 
 	void Update () {
@@ -26,9 +30,11 @@ public class MainMenuPressButton : MonoBehaviour {
             _eventManager.InvokeSnapshotTransistionTest(_snapshotNumber);
         }
         if (Input.GetKeyDown(KeyCode.Space) && _cursorPosition.currentPointerPosition == 1) {
+            _audioSource.PlayOneShot(_audioClip);
             StartCoroutine(LoadYourAsyncScene());
         }
         if (Input.GetKeyDown(KeyCode.Space) && _cursorPosition.currentPointerPosition == 0) {
+            _audioSource.PlayOneShot(_audioClip);
             Application.Quit();
         }
     }
