@@ -10,7 +10,6 @@ public class WallOne : MonoBehaviour {
     public int GamificationLvl;
     private bool waterFlow;
     private float waterTime = -1.0f;
-    private float live = 1.0f;
     private bool holdBreath;
     private float punsh = -1.0f;
     private int eventQuote = 5;
@@ -59,7 +58,7 @@ public class WallOne : MonoBehaviour {
             }
             if (punsh <= .0f && punsh > -1.0f)
             {
-                live -= 0.5f;
+                health.value -= 0.5f;
             }
         }
         if (waterTime > 0)
@@ -72,13 +71,12 @@ public class WallOne : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.A))
         {
-            live -= 0.02f * Time.deltaTime;
+            health.value -= 0.02f * Time.deltaTime;
         }
         else if (waterFlow)
         {
-            live -= 0.2f * Time.deltaTime;
+            health.value -= 0.2f * Time.deltaTime;
         }
-        health.value = live;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (waterFlow) waterFlow = false;
