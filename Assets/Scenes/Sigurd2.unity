@@ -196,7 +196,7 @@ MonoBehaviour:
   menuItemId: 1
   startScale: {x: 1, y: 1, z: 1}
   targetScale: {x: 1.1, y: 1.1, z: 1}
-  speed: 1
+  speed: 0.66
 --- !u!1 &962980677
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   menuItemId: 0
   startScale: {x: 1, y: 1, z: 1}
   targetScale: {x: 1.2, y: 1.2, z: 1}
-  speed: 2
+  speed: 1.34
 --- !u!1 &1475278659
 GameObject:
   m_ObjectHideFlags: 0
