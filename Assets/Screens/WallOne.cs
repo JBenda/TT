@@ -68,7 +68,6 @@ public class WallOne : MonoBehaviour {
             if (Random.Range(0, 100) < eventQuote)
             {
                 int rnd = Random.Range(0 ,100);
-                else
                 {
                     StartWater();
                     if (rnd < 40) rnd += 40;
