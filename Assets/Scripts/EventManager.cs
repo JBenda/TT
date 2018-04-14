@@ -8,6 +8,7 @@
 //List of delegate events.
 public delegate void OnPressStartGameEventHandler();
 public delegate void OnSnapshotTransistionTestEventHandler(int snapshotNumber);
+public delegate void OnCallRandomSoundEventHandler();
 
 public class EventManager : MonoBehaviour {
 
@@ -17,6 +18,7 @@ public class EventManager : MonoBehaviour {
     //List of public events.
     public event OnPressStartGameEventHandler OnPressStartGame;
     public event OnSnapshotTransistionTestEventHandler OnSnapshotTransistionTest;
+    public event OnCallRandomSoundEventHandler OnCallRandomSound;
 
     private void Awake() {
         if (instance == null) {
@@ -38,6 +40,12 @@ public class EventManager : MonoBehaviour {
     public void InvokeSnapshotTransistionTest(int snapshotNumber) {
         if (OnSnapshotTransistionTest != null) {
             OnSnapshotTransistionTest(snapshotNumber);
+        }
+    }
+
+    public void InvokeCallRandomSound() {
+        if (OnCallRandomSound != null) {
+            OnCallRandomSound();
         }
     }
 }
