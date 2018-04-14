@@ -24,6 +24,14 @@ public class WallTwo : MonoBehaviour {
         if (direction)
         {
             rotation = -rotation;
+<<<<<<< HEAD
+            dir = DIRECTION.UP;
+        }
+        else
+        {
+            dir = DIRECTION.DOWN;
+=======
+>>>>>>> ba83fe39aa1ef459711683b97e4de66a36e07423
         }
         speed = movment / reactionTime;
         state = STETS.ATTACK;
@@ -37,8 +45,19 @@ public class WallTwo : MonoBehaviour {
         }
         if (state == STETS.ATTACK)
         {
+<<<<<<< HEAD
+            if (mouthMov >= 0.4f)
+            {
+                if (pos == DIRECTION.CENTER)
+                    setMovment(0.4f, mov == DIRECTION.UP ? 0.1f : -0.1f);
+                else
+                    setMovment(0.4f, pos == DIRECTION.UP ? -0.1f : 0.1f);
+            }
+            else
+=======
             float d = Time.deltaTime / reactionTime;
             if (tvAngle < angle)
+>>>>>>> ba83fe39aa1ef459711683b97e4de66a36e07423
             {
                 tvAngle += d * angle;
             }
