@@ -6,7 +6,6 @@ using UnityEngine;
 public class WallOne : MonoBehaviour {
     private bool pressed = false;
     public CountDown counter;
-    public CameraMovment cam;
     public Slider health;
     public int GamificationLvl;
     private bool waterFlow;
