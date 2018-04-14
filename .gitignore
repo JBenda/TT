@@ -35,3 +35,7 @@ sysinfo.txt
 *.unitypackage
 Assets/Scenes/Julian.unity.meta
 Assets/Scenes/Sigurd2.unity.meta
+Assets/Scripts/MainMenuMoveCursor.cs.meta
+Assets/Scripts/MainMenuAnimateElement.cs.meta
+Assets/Scripts.meta
+Assets/Art/Sprites/tortureTime2.png.meta
