@@ -11,7 +11,6 @@ public class WallOne : MonoBehaviour {
     public float movDistance;
     private Vector3 punshSpeed;
     private Vector3 punshA;
-    public Text info;
     public Slider health;
     public MouthOpen mouthHandler;
     public int GamificationLvl;
@@ -97,14 +96,6 @@ public class WallOne : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.A))
         {
             mouthHandler.CloathMouth();
-        }
-        if (waterFlow)
-        {
-            info.text = "Water";
-        }
-        else
-        {
-            info.text = "NO";
         }
         if (punsh < 0 && Random.Range((int)0,(int) 100) < 40 && Input.GetKey(KeyCode.A))
         {

@@ -10,7 +10,7 @@ public class CameraShader : MonoBehaviour {
     {
         if (shader)
         {
-            transform.camera.SetReplacementShader(shader, null);
+            transform.GetComponent<Camera>().SetReplacementShader(shader, null);
         }
         Debug.Log("No shader");
     }
