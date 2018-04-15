@@ -124,17 +124,13 @@ public class WallTwo : MonoBehaviour
         }
         if (mov != pos)
         {
-            /* if (mouthMov >= 0.4f)
             if (mouthMov >= 0.4f)
             {
                 if (pos == DIRECTION.CENTER)
-                    setMovment(0.4f, mov == DIRECTION.UP ? 0.1f : -0.1f);
+                    setMovment(0.4f, mov == DIRECTION.UP ? 0.04f : -0.04f);
                 else
-                    setMovment(0.4f, pos == DIRECTION.UP ? -0.1f : 0.1f);
-            }*/ 
-            float d = Time.deltaTime / reactionTime;
-            /*if (tvAngle < angle)
-            }
+                    setMovment(0.4f, pos == DIRECTION.UP ? -0.04f : 0.04f);
+            } 
             else
             {
                 mouthMov += Time.deltaTime;
@@ -145,7 +141,7 @@ public class WallTwo : MonoBehaviour
                 }
                 else
                     head.Translate(new Vector3(0, 1, 0) * timeToSpeed(mouthMov));
-            }*/
+            }
         }
     }
 }
