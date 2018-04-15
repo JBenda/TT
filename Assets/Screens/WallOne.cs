@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class WallOne : MonoBehaviour {
     public CountDown counter;
+    public float TimePunsh;
     public Transform punshFist;
     public float movDistance;
+    private Vector3 punshSpeed;
+    private Vector3 punshA;
     public Text info;
     public Slider health;
     public MouthOpen mouthHandler;
@@ -16,9 +19,14 @@ public class WallOne : MonoBehaviour {
     private bool holdBreath;
     private float punsh = -1.0f;
     private int eventQuote = 5;
+    private float punshTime = 0;
+    enum FITS_POS { HOLD, HIN, BACK};
+    private FITS_POS fist = FITS_POS.HOLD;
     public WaterSplash splashAnim;
+    private Vector3 fistPos;
     // Use this for initialization
     void Start() {
+        fistPos =  punshFist.position;
     }
     void StartWater()
     {
@@ -32,17 +40,46 @@ public class WallOne : MonoBehaviour {
     }
     void PunshHit()
     {
+        punshSpeed = new Vector3(0.0f, 0.0f, 0);
+        float a = 2 * movDistance / (TimePunsh * TimePunsh);
+        punshA = new Vector3(a, 0, 0);
+        Debug.Log(punshSpeed.ToString());
         health.value -= 0.2f;
-
+        punshTime = TimePunsh;
+        fist = FITS_POS.HIN;
     }
     private void Hit()
     {
-        punsh = 5.0f;
+        punsh = 2.0f;
         counter.StartCounter(punsh);
     }
     // Update is called once per frame
     void Update()
     {
+        if (fist != FITS_POS.HOLD)
+        {
+            punshSpeed += punshA * Time.deltaTime;
+            punshTime -= Time.deltaTime;
+            if (punshTime < 0)
+            {
+                Debug.Log("Move");
+                if (fist == FITS_POS.HIN)
+                {
+                    fist = FITS_POS.BACK;
+                    punshTime = TimePunsh;
+                    punshSpeed = new Vector3();
+                }
+                else
+                {
+                    fist = FITS_POS.HOLD;
+                    punshFist.position = fistPos;
+                }
+            }
+            if (fist == FITS_POS.HIN)
+                punshFist.Translate(punshSpeed * Time.deltaTime);
+            else
+                punshFist.Translate( - punshSpeed * Time.deltaTime);
+        }
         if (Input.GetKeyUp(KeyCode.A))
         {
             mouthHandler.OpenMouth();
@@ -59,7 +96,7 @@ public class WallOne : MonoBehaviour {
         {
             info.text = "NO";
         }
-        if (Random.Range((int)0,(int) 100) < 40 && Input.GetKey(KeyCode.A))
+        if (punsh < 0 && Random.Range((int)0,(int) 100) < 40 && Input.GetKey(KeyCode.A))
         {
             Hit();
         }
@@ -68,7 +105,6 @@ public class WallOne : MonoBehaviour {
             if (Random.Range(0, 100) < eventQuote)
             {
                 int rnd = Random.Range(0 ,100);
-                else
                 {
                     StartWater();
                     if (rnd < 40) rnd += 40;
