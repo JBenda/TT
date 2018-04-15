@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Sigurd2.unity
+    guid: 29c1c76188c59c145a119ec0a5c72a2a
+  - enabled: 1
+    path: Assets/Scenes/Julian.unity
+    guid: de1f673940529fd4290f69695a45dbb1
