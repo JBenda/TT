@@ -133,7 +133,7 @@ public class WallTwo : MonoBehaviour
                     setMovment(0.4f, pos == DIRECTION.UP ? -0.1f : 0.1f);
             }*/ 
             float d = Time.deltaTime / reactionTime;
-            if (tvAngle < angle)
+            /*if (tvAngle < angle)
             }
             else
             {
@@ -145,7 +145,7 @@ public class WallTwo : MonoBehaviour
                 }
                 else
                     head.Translate(new Vector3(0, 1, 0) * timeToSpeed(mouthMov));
-            }
+            }*/
         }
     }
 }
