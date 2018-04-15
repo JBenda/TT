@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 1936317212}
+  reactionTime: 1.5
   TimePunsh: 0.15
   punshFist: {fileID: 2080214357}
   movDistance: 9
@@ -2213,7 +2214,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2080214357}
   - component: {fileID: 2080214358}
-  - component: {fileID: 2080214359}
   m_Layer: 0
   m_Name: waterboardInterogatorArmPunch
   m_TagString: Untagged
@@ -2278,20 +2278,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!95 &2080214359
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2080214356}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2bd18e3e7841fdd4fbbae07c2ad66391, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

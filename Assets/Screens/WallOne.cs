@@ -83,9 +83,10 @@ public class WallOne : MonoBehaviour {
         }
         else if (punsh > .0f)
         {
+            Debug.Log("prePunsh");
             punshFist.position = fistPos + (1 - punsh / reactionTime) * preMove;
         }
-        else if (fistPos.x < punshFist.position.x)
+        else if (fistPos.x < punshFist.position.x && fist == FITS_POS.HOLD)
         {
             punshFist.Translate(new Vector3(-4, 0, 0) * Time.deltaTime);
         }
@@ -114,11 +115,9 @@ public class WallOne : MonoBehaviour {
             if (Random.Range(0, 100) < eventQuote)
             {
                 int rnd = Random.Range(0 ,100);
-                {
-                    StartWater();
-                    if (rnd < 40) rnd += 40;
-                    waterTime = rnd / 30;
-                }
+                StartWater();
+                if (rnd < 40) rnd += 40;
+                waterTime = rnd / 30;
             }
         }
         if (punsh > 0)
