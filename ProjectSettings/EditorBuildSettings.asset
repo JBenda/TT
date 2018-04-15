@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Julian.unity
     guid: b1ae7caadaecbe940a15e13aaafaf514
+  - enabled: 1
+    path: Assets/Scenes/ChooseInterogator.unity
+    guid: e7453e3589f0f3d48accfd8a9fc9c43a

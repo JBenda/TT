@@ -41,7 +41,7 @@ public class MainMenuPressButton : MonoBehaviour {
     }
 
     IEnumerator LoadYourAsyncScene() {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Assets/Scenes/Julian.unity");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Assets/Scenes/ChooseInterogator.unity");
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone) {
