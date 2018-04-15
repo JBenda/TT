@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuPressButton : MonoBehaviour {
 
     public AudioClip _audioClip;
-    private AudioSource _audioSource;
 
+    private AudioSource _audioSource;
     private MainMenuMoveCursor _cursorPosition;
     private EventManager _eventManager;
 
@@ -18,7 +18,8 @@ public class MainMenuPressButton : MonoBehaviour {
     void Start () {
         _cursorPosition = FindObjectOfType<MainMenuMoveCursor>();
         _eventManager = FindObjectOfType<EventManager>();
-        _audioSource = FindObjectOfType<MusicManager>().GetComponent<AudioSource>();
+
+        _audioSource = FindObjectOfType<SoundEmitter>().GetComponent<AudioSource>();
     }
 
 	void Update () {

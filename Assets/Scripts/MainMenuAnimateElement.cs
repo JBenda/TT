@@ -3,7 +3,6 @@
 /*
     This script animates menu items in the main menu that are currently active.
     */
-
 public class MainMenuAnimateElement : MonoBehaviour {
     public int menuItemId;
 
