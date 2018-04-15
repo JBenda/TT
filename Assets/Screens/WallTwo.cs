@@ -127,7 +127,8 @@ public class WallTwo : MonoBehaviour {
                 else
                     setMovment(0.4f, pos == DIRECTION.UP ? -0.1f : 0.1f);
             }
-            else
+            float d = Time.deltaTime / reactionTime;
+            if (tvAngle.x < angle)
             {
                 mouthMov += Time.deltaTime;
                 if (mouthMov >= 0.4f)
