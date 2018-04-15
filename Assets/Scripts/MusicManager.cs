@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour {
 
     private int currentSnapshot;
     private float[] weights;
+    private static bool created;
 
     private void OnEnable() {
         _eventManager = FindObjectOfType<EventManager>();
@@ -29,7 +30,12 @@ public class MusicManager : MonoBehaviour {
         } else if(instance != this) {
             Destroy(gameObject);
         }
-	}
+
+        if (!created) {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
+    }
 
     //This is a list of the available snapshots to transition to from the current state.
     //Each snapshot must have a weight in each scenario.
