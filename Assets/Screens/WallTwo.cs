@@ -60,11 +60,11 @@ public class WallTwo : MonoBehaviour {
         if (direction)
         {
             rotation = -rotation;
-            dir = DIRECTION.DOWN;
+            dir = DIRECTION.UP;
         }
         else
         {
-            dir = DIRECTION.UP;
+            dir = DIRECTION.DOWN;
         }
         speed = movment / reactionTime;
         mov = DIRECTION.CENTER;
@@ -123,9 +123,9 @@ public class WallTwo : MonoBehaviour {
             if (mouthMov >= 0.4f)
             {
                 if (pos == DIRECTION.CENTER)
-                    setMovment(0.4f, mov == DIRECTION.UP ? 0.2f : -0.2f);
+                    setMovment(0.4f, mov == DIRECTION.UP ? 0.1f : -0.1f);
                 else
-                    setMovment(0.4f, pos == DIRECTION.UP ? -0.2f : 0.2f);
+                    setMovment(0.4f, pos == DIRECTION.UP ? -0.1f : 0.1f);
             }
             else
             {
