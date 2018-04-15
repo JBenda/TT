@@ -13,6 +13,7 @@ public delegate void OnCallRandomSoundEventHandler();
 public class EventManager : MonoBehaviour {
 
     public static EventManager instance = null;
+    private static bool created;
 
     //////////////////////////////////////////////////
     //List of public events.
@@ -26,6 +27,11 @@ public class EventManager : MonoBehaviour {
         }
         else if (instance != this) {
             Destroy(gameObject);
+        }
+
+        if (!created) {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
         }
     }
 
