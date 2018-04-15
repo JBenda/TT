@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WallOne : MonoBehaviour {
     public CountDown counter;
+    public float reactionTime;
     public float TimePunsh;
     public Transform punshFist;
     public float movDistance;
@@ -24,6 +25,7 @@ public class WallOne : MonoBehaviour {
     private FITS_POS fist = FITS_POS.HOLD;
     public WaterSplash splashAnim;
     private Vector3 fistPos;
+    private Vector3 preMove = new Vector3(4, 0, 0);
     // Use this for initialization
     void Start() {
         fistPos =  punshFist.position;
@@ -41,30 +43,29 @@ public class WallOne : MonoBehaviour {
     void PunshHit()
     {
         punshSpeed = new Vector3(0.0f, 0.0f, 0);
-        float a = 2 * movDistance / (TimePunsh * TimePunsh);
+        float a = 2 * (movDistance - 4) / (TimePunsh * TimePunsh);
         punshA = new Vector3(a, 0, 0);
-        Debug.Log(punshSpeed.ToString());
         health.value -= 0.2f;
         punshTime = TimePunsh;
         fist = FITS_POS.HIN;
     }
     private void Hit()
     {
-        punsh = 2.0f;
+        punsh = reactionTime;
         counter.StartCounter(punsh);
     }
     // Update is called once per frame
     void Update()
     {
-        if (fist != FITS_POS.HOLD)
+        if (fist == FITS_POS.HIN || fist == FITS_POS.BACK)
         {
             punshSpeed += punshA * Time.deltaTime;
             punshTime -= Time.deltaTime;
             if (punshTime < 0)
             {
-                Debug.Log("Move");
                 if (fist == FITS_POS.HIN)
                 {
+                    mouthHandler.StartHitAnim();
                     fist = FITS_POS.BACK;
                     punshTime = TimePunsh;
                     punshSpeed = new Vector3();
@@ -79,6 +80,14 @@ public class WallOne : MonoBehaviour {
                 punshFist.Translate(punshSpeed * Time.deltaTime);
             else
                 punshFist.Translate( - punshSpeed * Time.deltaTime);
+        }
+        else if (punsh > .0f)
+        {
+            punshFist.position = fistPos + (1 - punsh / reactionTime) * preMove;
+        }
+        else if (fistPos.x < punshFist.position.x)
+        {
+            punshFist.Translate(new Vector3(-4, 0, 0) * Time.deltaTime);
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
