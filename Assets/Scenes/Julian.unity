@@ -784,6 +784,41 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &532184674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 532184675}
+  m_Layer: 0
+  m_Name: Tooth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &532184675
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532184674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1063028670}
+  - {fileID: 1027032986}
+  m_Father: {fileID: 746398226}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &589983275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1363,7 @@ RectTransform:
   - {fileID: 1426087861}
   - {fileID: 1838784617}
   - {fileID: 873783295}
-  - {fileID: 1063028670}
-  - {fileID: 1027032986}
+  - {fileID: 532184675}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2111,8 +2145,8 @@ Transform:
   - {fileID: 2005900481}
   - {fileID: 658192461}
   - {fileID: 1179784285}
-  m_Father: {fileID: 746398226}
-  m_RootOrder: 4
+  m_Father: {fileID: 532184675}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038406716
 GameObject:
@@ -2234,8 +2268,8 @@ Transform:
   - {fileID: 1380007899}
   - {fileID: 1038406717}
   - {fileID: 304501214}
-  m_Father: {fileID: 746398226}
-  m_RootOrder: 3
+  m_Father: {fileID: 532184675}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1063028671
 MonoBehaviour:
@@ -3649,8 +3683,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46030820585f654e9525df718fb42cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theeth:
+  - {fileID: 1104990855}
+  - {fileID: 2004980289}
+  - {fileID: 969861421}
+  - {fileID: 1615701316}
+  - {fileID: 730053907}
+  - {fileID: 804007352}
+  - {fileID: 923654890}
+  - {fileID: 1812258879}
+  - {fileID: 1369091640}
+  - {fileID: 1526222907}
+  - {fileID: 612365728}
+  - {fileID: 612365728}
+  - {fileID: 1926889299}
+  - {fileID: 2005900480}
+  - {fileID: 658192460}
+  - {fileID: 1179784284}
   head: {fileID: 1027032986}
   dnetist: {fileID: 1063028671}
+  health: {fileID: 370833016}
 --- !u!225 &2067294929
 CanvasGroup:
   m_ObjectHideFlags: 0
